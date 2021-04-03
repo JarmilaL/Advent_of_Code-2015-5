@@ -1,0 +1,90 @@
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: azure;
+    font-family: 'Merienda', cursive;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0.7;
+}
+
+.content {
+    position: relative;
+    min-height: 400px;
+    text-align: center;
+    color: #0a028e;
+}
+
+
+
+h1 {
+    margin: 0;
+    padding: 30px 0;
+    text-shadow: 2px 1px #41487c;
+}
+
+textarea {
+    margin: 0 auto;
+    height: 120px;
+    width: 80%;
+    box-shadow: 0 0 5px #50b1ff;
+}
+
+.button {
+    margin: 20px auto;
+    padding: 5px;
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #a7d9ff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px black;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.button:active {
+    box-shadow: 1px 1px 3px black;
+    transform: translate(2px, 2px);
+}
+
+.result {
+    font-weight: 700;
+    font-size: 20px;
+    visibility: hidden;
+}
+
+.result span {
+    text-decoration: underline #0a028e;
+}
+
+.footer {
+    position: relative;
+    text-align: center;
+    line-height: 0.6;
+    color: #0a028e;
+}
+
+@media (min-width: 500px) {
+    .wrap {
+        margin: auto;
+        width: 500px;
+        height: auto;
+        box-shadow: 0 0 10px black;
+    }
+}
