@@ -21,14 +21,6 @@ const evaluateStrings = input => {
                 }
             }
         }
-
-        // const minThreeVowels = lookForVowels(string);
-        // const doubleLetters = lookForDoubleLetters(string);
-        // const naughtyGroups = lookForNaughtyGroups(string);
-        //
-        // if (minThreeVowels && doubleLetters && naughtyGroups) {
-        //     niceStrings.push(string);
-        // }
     }
 
     renderResult(niceStrings.length);

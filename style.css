@@ -45,6 +45,13 @@ textarea {
     box-shadow: 0 0 5px #50b1ff;
 }
 
+.radio {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 700;
+}
+
 .button {
     margin: 20px auto;
     padding: 5px;
