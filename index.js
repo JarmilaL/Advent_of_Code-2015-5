@@ -12,16 +12,29 @@ const inputToArray = () => {
 const evaluateStrings = input => {
     let niceStrings = [];
 
-    for (const string of input) {
-
-        if (lookForVowels(string)) {
-            if (lookForDoubleLetters(string)) {
-                if (lookForNaughtyGroups(string)) {
+    if (document.getElementById('radio-old').checked) {
+        console.log('old method');
+        for (const string of input) {
+            if (lookForVowels(string)) {
+                if (lookForDoubleLetters(string)) {
+                    if (lookForNaughtyGroups(string)) {
+                        niceStrings.push(string);
+                    }
+                }
+            }
+        }
+    } else {
+        console.log('new method')
+        for (const string of input) {
+            if (lookForRepeatingPairs(string)) {
+                if (lookForRepeatingLetters(string)) {
                     niceStrings.push(string);
                 }
             }
         }
     }
+
+
 
     renderResult(niceStrings.length);
 };
@@ -58,6 +71,38 @@ const lookForNaughtyGroups = string => {
         }
     }
     return true;
+};
+
+const lookForRepeatingPairs = string => {
+    const listOfPairs = createPairs(string);
+
+    for (let i = 0; i < listOfPairs.length; i++) {
+        for (let j = 0; j < listOfPairs.length; j++) {
+            if (i !== j && i + 1 < j && listOfPairs[i] === listOfPairs[j]) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+};
+
+const createPairs = string => {
+    const listOfPairs = [];
+
+    for (let i = 0; i < string.length; i++) {
+        listOfPairs.push(string[i] + string[i + 1]);
+    }
+    return listOfPairs;
+};
+
+const lookForRepeatingLetters = string => {
+    for (let i = 0; i < string.length - 2; i++) {
+        if (string[i] === string[i + 2]) {
+            return true;
+        }
+    }
+    return false;
 };
 
 const renderResult = number => {
